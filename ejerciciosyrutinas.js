@@ -1,0 +1,7 @@
+const rutinas = {
+
+}
+
+const ejercicios = {
+  
+}

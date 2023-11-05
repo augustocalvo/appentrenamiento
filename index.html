@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <link rel="stylesheet" href="ui-kit.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temporizador de Entrenamiento</title>
+</head>
+<body>
+ <!-- Pantalla de Inicio -->
+    
+    <div id="inicio" class="page">
+            <div  class="card">
+                <div class="h1">CALIS-</br>TENIA</br>APP</div>
+                <div class="p">Mejora tu fuerza y flexibilidad con nuestro completo programa de entrenamiento calisténico en esta app de ejercicios</div>
+            </div>
+            <div class="primaryButton" onclick="abrirModal()">Entrenar</div>
+    </div>
+    
+
+    <!-- Pantalla de Tiempo de Entrenamiento -->
+
+    <div id="tiempo-entrenamiento" class="page hidden">
+        <div class="option-list-container" onclick="cerrarModal()">
+        <div class="option-list">
+            <div class="option-list-title">
+                <h3>Selecciona el tiempo de <br/> entrenamiento:</h3>
+            </div>
+            <div class="list">
+                <div class="secondaryButton"  onclick="elegirDuracion('mediaHora')">30 Min.</div>  
+                <div class="secondaryButton" onclick="elegirDuracion('unaHora')" >1 Hrs.</div> 
+                <div class="secondaryButton" onclick="elegirDuracion('horaYMedia')" >1:30 Hrs.</div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <!-- Pantalla del Temporizador -->
+
+<div id="temporizador" class="page hidden">
+    <div class="temporizador-content">
+        <div class="card-temporizador">
+            <div class="tiempo-total-content">
+            <p id="tiempo-total">Total:<br/>--:--</p>
+            </div>
+            <div class="divider"></div>
+            <div class="tiempo-categoria-content">
+                <p id="tiempo-categoria">Tiempo de calentamiento: --:--</p>
+            </div>
+        </div>
+        <div class="card-actions">
+            <button class="primaryButton" id="iniciar-btn" onclick="iniciarTemporizador()">Iniciar</button>
+            <button class="terciaryButton hidden" id="pausar-btn" onclick="pausarTemporizador()">Pausar</button>
+            <!-- En el HTML dentro de la página del Temporizador -->
+            <button id="proxima-categoria-btn" class="secondaryButton" onclick="saltarProximaCategoria()">Saltear</button>
+
+            <div class="temporizador-actions hidden" id="paused-actions">
+                <button class="terciaryButton" id="reiniciar-btn" onclick="reiniciarTemporizador()">Reiniciar</button>
+                <button class="primaryButton" id="reanudar-btn" onclick="reanudarTemporizador()">Reanudar</button>
+            </div>
+            <button class="destructiveButton" id="detener-btn" onclick="detenerTemporizador()">Dejar entrenamiento</button>
+         </div>
+    </div>
+</div>
+    <script src="enrutador.js"></script>
+    <script src="temporizador.js"></script>
+    
+</body>
+</html>
